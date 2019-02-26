@@ -1,9 +1,9 @@
 {
-  "name": "project-2",
-  "description": "Handyman/Women Job Site",
+  "name": "hand-e-jobs",
+  "description": "job source",
   "version": "0.0.0",
   "homepage": "",
-  "main": "index.js",
+  "main": "src",
   "keywords": [
     "feathers"
   ],
@@ -14,7 +14,7 @@
   "contributors": [],
   "bugs": {},
   "directories": {
-    "lib": "index.js",
+    "lib": "src",
     "test": "test/",
     "config": "config/"
   },
@@ -24,9 +24,9 @@
   },
   "scripts": {
     "test": "npm run eslint && NODE_ENV= npm run mocha",
-    "eslint": "eslint index.js/. test/. --config .eslintrc.json",
-    "dev": "nodemon index.js/",
-    "start": "node index.js/",
+    "eslint": "eslint src/. test/. --config .eslintrc.json",
+    "dev": "nodemon src/",
+    "start": "node src/",
     "mocha": "mocha test/ --recursive --exit"
   },
   "dependencies": {
@@ -37,7 +37,10 @@
     "@feathersjs/socketio": "^3.2.9",
     "compression": "^1.7.3",
     "cors": "^2.8.5",
+    "feathers-mongoose": "^7.3.1",
     "helmet": "^3.15.1",
+    "mongodb-core": "^3.1.11",
+    "mongoose": "^5.4.15",
     "serve-favicon": "^2.5.0",
     "winston": "^3.2.1"
   },
