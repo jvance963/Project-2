@@ -21,11 +21,19 @@ DELETE User
 
 <h2> Models </h2>
 
-<p> I am going to be building 3 models for this application. They will be for the
+<p> I am going to be building 4 models for this application. They will be for the
 
 - "user",
+  - login
+  - Sign-up
 - "job",
-- "response" </p>
+  - Create
+  - Edit
+  - Delete
+- "response"
+  - New
+  - Edit
+  - Delete
 
 <h2> CONSIDERATIONS </h2>
 

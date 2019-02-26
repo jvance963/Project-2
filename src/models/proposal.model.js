@@ -6,8 +6,10 @@ module.exports = function (app) {
   const mongooseClient = app.get('mongooseClient');
   const { Schema } = mongooseClient;
   const proposal = new Schema({
-    text: { type: String, required: true }
-  }, {
+    content: String, 
+    required: true,
+     } 
+    }
     timestamps: true
   });
 

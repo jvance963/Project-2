@@ -5,14 +5,14 @@
 module.exports = function(app) {
   const mongooseClient = app.get("mongooseClient");
   const { Schema } = mongooseClient;
-  const User = new Schema(
+  const user = new Schema(
     {
       email: String,
       password: String,
-      tweets: [
+      jobPost: [
         {
           type: Schema.Types.ObjectId,
-          ref: "Tweet"
+          ref: "Job Post"
         }
       ]
     },
