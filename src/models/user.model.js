@@ -5,7 +5,7 @@
 module.exports = function(app) {
   const mongooseClient = app.get("mongooseClient");
   const { Schema } = mongooseClient;
-  const user = new Schema(
+  const User = new Schema(
     {
       email: String,
       password: String,
@@ -16,10 +16,19 @@ module.exports = function(app) {
         }
       ]
     },
+
     {
       timestamps: true
     }
   );
 
-  return mongooseClient.model("user", user);
+  User.methods.encrypt = function(password) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+  };
+
+  User.methods.validPassword = function(password) {
+    return bcrypt.compareSync(password, this.local.password);
+  };
+
+  return mongooseClient.model("User", User);
 };

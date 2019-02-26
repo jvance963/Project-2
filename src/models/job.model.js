@@ -11,8 +11,13 @@ module.exports = function(app) {
       createdAt: {
         type: Date,
         default: Date.now()
+      },
+      author: {
+        type: Schema.Types.ObjectId,
+        ref: "User"
       }
     },
+
     {
       timestamps: true
     }

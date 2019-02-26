@@ -1,15 +1,27 @@
 // response-model.js - A mongoose model
-// 
+//
 // See http://mongoosejs.com/docs/models.html
 // for more of what you can do here.
-module.exports = function (app) {
-  const mongooseClient = app.get('mongooseClient');
+module.exports = function(app) {
+  const mongooseClient = app.get("mongooseClient");
   const { Schema } = mongooseClient;
-  const response = new Schema({
-    text: { type: String, required: true }
-  }, {
-    timestamps: true
-  });
+  const response = new Schema(
+    {
+      content: String,
+      createdAt: {
+        type: Date,
+        default: Date.now()
+      },
+      author: {
+        type: Schema.Types.ObjectId,
+        ref: "User"
+      }
+    },
 
-  return mongooseClient.model('response', response);
+    {
+      timestamps: true
+    }
+  );
+
+  return mongooseClient.model("response", response);
 };
